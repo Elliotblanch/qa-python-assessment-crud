@@ -56,5 +56,10 @@ def update(id):
         form.partyID.data = player.partyID
     return render_template('update.html', form=form)
 
-
+@app.route('/deleteplayer/<int:id>')
+def delete(id):
+    player = Player.query.get(id)
+    db.session.delete(player)
+    db.session.commit()
+    return redirect(url_for('index'))
     
