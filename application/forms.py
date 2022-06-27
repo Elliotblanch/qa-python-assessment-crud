@@ -9,3 +9,6 @@ class PlayerForm(FlaskForm):
     ac = IntegerField("Armour Class")
     caster = BooleanField("Caster?")
     partyID = IntegerField("Party ID") 
+
+class PartyForm(FlaskForm):
+    name = StringField("Name")
