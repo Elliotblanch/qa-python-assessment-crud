@@ -30,7 +30,7 @@ def add():
             return redirect(url_for('index'))
     return render_template('addplayer.html', form=form)
 
-@app.route(/updateplayer/<int:id>, methods = ['GET', 'POST'])
+@app.route('/updateplayer/<int:id>', methods = ['GET', 'POST'])
 def update(id):
     form = PlayerForm()
     player = Player.query.get(id)
