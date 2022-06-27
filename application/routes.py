@@ -5,11 +5,13 @@ from flask import redirect, url_for, render_template, request
 
 @app.route('/')
 def index():
+    player = Player.query.all()
 
+    return render_template('player.html', players=player)
 
 @app.route('/about')
 def about():
-
+    return render_template("about.html")
 
 @app.route('/addplayer', methods = ['GET', 'POST'])
 def add():
