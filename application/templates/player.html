@@ -1,0 +1,14 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<br>
+{% for player in players %}
+<p>Character: {{ player.name }}</p>
+<form action="{{ url_for('deleteplayer', id=player.id) }}">
+<button type ="Submit">Delete character</button>
+</form>
+<form action="{{ url_for('updateplayer', id=player.id) }}">
+<button type ="Submit">Update character</button>
+</form>
+{% endfor %}
+{% endblock body %}
