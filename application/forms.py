@@ -23,6 +23,8 @@ class PlayerForm(FlaskForm):
     ac = IntegerField("Armour Class")
     caster = BooleanField("Caster?")
     partyID = IntegerField("Party ID") 
+    submit = SubmitField("Submit")
 
 class PartyForm(FlaskForm):
     name = StringField("Name")
+    submit = SubmitField("Submit")
