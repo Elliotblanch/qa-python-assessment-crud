@@ -1,4 +1,4 @@
-from flask_wtf import FlaskForms
+from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, IntegerField, SelectField, SubmitField
 
 class PlayerForm(FlaskForm):
