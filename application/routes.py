@@ -11,7 +11,7 @@ def index():
 
 @app.route('/partyindex')
 def partyindex():
-    player = Player.query.all()
+    party = Party.query.all()
 
     return render_template('party.html', parties=party)
 
