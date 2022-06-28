@@ -89,7 +89,7 @@ def update(id):
     return render_template('updateparty.html', form=form)
 
 
-    @app.route('/deleteparty/<int:id>')
+@app.route('/deleteparty/<int:id>')
 def delete(id):
     party = Party.query.get(id)
     db.session.delete(party)
