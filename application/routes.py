@@ -75,3 +75,11 @@ def add():
             db.session.commit()
             return redirect(url_for('index'))
     return render_template('addparty.html', form=form)
+
+
+    @app.route('/deleteparty/<int:id>')
+def delete(id):
+    party = Party.query.get(id)
+    db.session.delete(party)
+    db.session.commit()
+    return redirect(url_for('index'))
