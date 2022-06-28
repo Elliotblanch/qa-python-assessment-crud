@@ -43,21 +43,21 @@ def updateplayer(id):
     form = PlayerForm()
     player = Player.query.get(id)
     if form.validate_on_submit():
-        player.name = form.name.data,
-        player.charClass = form.charClass.data,
-        player.level = form.level.data,
-        player.hp = form.hp.data,
-        player.ac = form.ac.data,
-        player.caster = form.caster.data,
+        player.name = form.name.data
+        player.charClass = form.charClass.data
+        player.level = form.level.data
+        player.hp = form.hp.data
+        player.ac = form.ac.data
+        player.caster = form.caster.data
         player.partyID = form.partyID.data
         db.session.commit()
         return redirect(url_for('index'))
     elif request.method == 'GET':
-        form.name.data = player.name,
-        form.charClass.data = player.charClass,
-        form.level.data = player.level,
-        form.hp.data = player.hp,
-        form.ac.data = player.ac,
+        form.name.data = player.name
+        form.charClass.data = player.charClass
+        form.level.data = player.level
+        form.hp.data = player.hp
+        form.ac.data = player.ac
         form.caster.data = player.caster
         form.partyID.data = player.partyID
     return render_template('updateplayer.html', form=form)
@@ -87,7 +87,7 @@ def updateparty(id):
     form = PartyForm()
     party = Party.query.get(id)
     if form.validate_on_submit():
-        party.name = form.name.data,
+        party.name = form.name.data
         db.session.commit()
         return redirect(url_for('index'))
     elif request.method == 'GET':
