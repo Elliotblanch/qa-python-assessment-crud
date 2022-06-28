@@ -62,4 +62,16 @@ def delete(id):
     db.session.delete(player)
     db.session.commit()
     return redirect(url_for('index'))
-    
+
+@app.route('/addparty', methods = ['GET', 'POST'])
+def add():
+    form = PartyForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            partyData = Party(
+            party.name = form.name.data
+            )
+            db.session.add(partyData)
+            db.session.commit()
+            return redirect(url_for('index'))
+    return render_template('addparty.html', form=form)
