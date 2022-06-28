@@ -14,7 +14,7 @@ def about():
     return render_template("about.html")
 
 @app.route('/addplayer', methods = ['GET', 'POST'])
-def add():
+def addplayer():
     form = PlayerForm()
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -33,7 +33,7 @@ def add():
     return render_template('addplayer.html', form=form)
 
 @app.route('/updateplayer/<int:id>', methods = ['GET', 'POST'])
-def update(id):
+def updateplayer(id):
     form = PlayerForm()
     player = Player.query.get(id)
     if form.validate_on_submit():
@@ -57,14 +57,14 @@ def update(id):
     return render_template('updateplayer.html', form=form)
 
 @app.route('/deleteplayer/<int:id>')
-def delete(id):
+def deleteplayer(id):
     player = Player.query.get(id)
     db.session.delete(player)
     db.session.commit()
     return redirect(url_for('index'))
 
 @app.route('/addparty', methods = ['GET', 'POST'])
-def add():
+def addparty():
     form = PartyForm()
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -77,7 +77,7 @@ def add():
     return render_template('addparty.html', form=form)
 
 @app.route('/updateparty/<int:id>', methods = ['GET', 'POST'])
-def update(id):
+def updateparty(id):
     form = PartyForm()
     party = Party.query.get(id)
     if form.validate_on_submit():
@@ -90,7 +90,7 @@ def update(id):
 
 
 @app.route('/deleteparty/<int:id>')
-def delete(id):
+def deleteparty(id):
     party = Party.query.get(id)
     db.session.delete(party)
     db.session.commit()
