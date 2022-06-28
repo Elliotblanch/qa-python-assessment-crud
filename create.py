@@ -1,5 +1,5 @@
 from application import db
-from application.models import player, party
+from application.models import Player, Party
 from application import __init__
 
 db.drop_all()
