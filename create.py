@@ -5,7 +5,7 @@ from application import __init__
 db.drop_all()
 db.create_all()
 
-sample_player = player(
+sample_player = Player(
     name = "Shen Shuhan",
     charClass = "Fighter",
     level = 5,
@@ -15,6 +15,6 @@ sample_player = player(
     partyID = 1
 )
 
-sample_party = party(
+sample_party = Party(
     name = "dynasty"
 )
