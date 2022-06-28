@@ -69,7 +69,7 @@ def add():
     if request.method == 'POST':
         if form.validate_on_submit():
             partyData = Party(
-            party.name = form.name.data
+            name = form.name.data
             )
             db.session.add(partyData)
             db.session.commit()
