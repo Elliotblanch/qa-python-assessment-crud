@@ -76,6 +76,18 @@ def add():
             return redirect(url_for('index'))
     return render_template('addparty.html', form=form)
 
+@app.route('/updateparty/<int:id>', methods = ['GET', 'POST'])
+def update(id):
+    form = PartyForm()
+    party = Party.query.get(id)
+    if form.validate_on_submit():
+        party.name = form.name.data,
+        db.session.commit()
+        return redirect(url_for('index'))
+    elif request.method = 'GET'
+        form.name.data = party.name    
+    return render_template('updateparty.html', form=form)
+
 
     @app.route('/deleteparty/<int:id>')
 def delete(id):
