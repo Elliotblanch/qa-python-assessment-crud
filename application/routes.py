@@ -54,7 +54,7 @@ def update(id):
         form.ac.data = player.ac,
         form.caster.data = player.caster
         form.partyID.data = player.partyID
-    return render_template('update.html', form=form)
+    return render_template('updateplayer.html', form=form)
 
 @app.route('/deleteplayer/<int:id>')
 def delete(id):
