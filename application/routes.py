@@ -9,6 +9,12 @@ def index():
 
     return render_template('player.html', players=player)
 
+@app.route('/partyindex')
+def partyindex():
+    player = Player.query.all()
+
+    return render_template('party.html', parties=party)
+
 @app.route('/about')
 def about():
     return render_template("about.html")
