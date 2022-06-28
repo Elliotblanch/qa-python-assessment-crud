@@ -46,7 +46,7 @@ def update(id):
         player.partyID = form.partyID.data
         db.session.commit()
         return redirect(url_for('index'))
-    elif request.method == 'GET'
+    elif request.method == 'GET':
         form.name.data = player.name,
         form.charClass.data = player.charClass,
         form.level.data = player.level,
@@ -84,7 +84,7 @@ def update(id):
         party.name = form.name.data,
         db.session.commit()
         return redirect(url_for('index'))
-    elif request.method == 'GET'
+    elif request.method == 'GET':
         form.name.data = party.name    
     return render_template('updateparty.html', form=form)
 
