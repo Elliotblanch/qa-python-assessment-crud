@@ -1,5 +1,5 @@
 from application import app, db
-from application.models import player, party
+from application.models import Player, Party
 from application.forms import PlayerForm, PartyForm
 from flask import redirect, url_for, render_template, request
 
