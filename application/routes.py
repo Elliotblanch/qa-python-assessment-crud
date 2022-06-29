@@ -79,7 +79,7 @@ def addparty():
             )
             db.session.add(partyData)
             db.session.commit()
-            return redirect(url_for('index'))
+            return redirect(url_for('partyindex'))
     return render_template('addparty.html', form=form)
 
 @app.route('/updateparty/<int:id>', methods = ['GET', 'POST'])
@@ -89,7 +89,7 @@ def updateparty(id):
     if form.validate_on_submit():
         party.name = form.name.data
         db.session.commit()
-        return redirect(url_for('index'))
+        return redirect(url_for('partyindex'))
     elif request.method == 'GET':
         form.name.data = party.name    
     return render_template('updateparty.html', form=form)
@@ -100,4 +100,4 @@ def deleteparty(id):
     party = Party.query.get(id)
     db.session.delete(party)
     db.session.commit()
-    return redirect(url_for('index'))
+    return redirect(url_for('partyindex'))
