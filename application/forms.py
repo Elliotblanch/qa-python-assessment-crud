@@ -4,19 +4,19 @@ from wtforms import StringField, BooleanField, IntegerField, SelectField, Submit
 class PlayerForm(FlaskForm):
     name = StringField("Name")
     charClass = SelectField("Class", choices =[
-        ("artficer", "Artificer"),
-        ("barbarian", "Barbarian"),
-        ("bard", "Bard"),
-        ("cleric", "Cleric"),
-        ("druid", "Druid"),
-        ("fighter", "Fighter"),
-        ("monk", "Monk"),
-        ("paladin", "Paladin"),
-        ("ranger", "Ranger"),
-        ("rogue", "Rogue"),
-        ("sorcerer", "Sorcerer"),
-        ("warlock", "Warlock"),
-        ("wizard", "Wizard")
+        ("Artficer", "Artificer"),
+        ("Barbarian", "Barbarian"),
+        ("Bard", "Bard"),
+        ("Cleric", "Cleric"),
+        ("Druid", "Druid"),
+        ("Fighter", "Fighter"),
+        ("Monk", "Monk"),
+        ("Paladin", "Paladin"),
+        ("Ranger", "Ranger"),
+        ("Rogue", "Rogue"),
+        ("Sorcerer", "Sorcerer"),
+        ("Warlock", "Warlock"),
+        ("Wizard", "Wizard")
     ])
     level = IntegerField("Level")
     hp = IntegerField("HP")
