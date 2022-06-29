@@ -81,7 +81,7 @@ class TestAddParty(TestBase):
             data = dict(name = "Crucible")
         )
         
-        assert Player.query.filter_by(name="Crucible").id == 2
+        assert Party.query.filter_by(name="Crucible").id == 2
 
 class TestUpdatePlayer(TestBase):
     def test_update_player(self):
