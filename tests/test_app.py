@@ -72,7 +72,7 @@ class TestAddPlayer(TestBase):
             )
         )
         
-        assert Player.query.filter_by(name="Feng Lei").id == 2
+        assert Player.query.filter_by(name="Feng Lei").first().id == 2
 
 class TestAddParty(TestBase):
     def test_add_Party(self):
@@ -81,17 +81,8 @@ class TestAddParty(TestBase):
             data = dict(name = "Crucible")
         )
         
-        assert Party.query.filter_by(name="Crucible").id == 2
+        assert Party.query.filter_by(name="Crucible").first().id == 2
 
-class TestUpdatePlayer(TestBase):
-    def test_update_player(self):
-
-        assert
-
-class TestUpdateParty(TestBase):
-    def test_update_party(self):
-
-        assert
 
 
 class TestDeletePlayer(TestBase):
