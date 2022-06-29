@@ -58,3 +58,55 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
 
 
+class TestAddPlayer(TestBase):
+    def test_add_Player(self):
+        response = self.client.post(
+            url_for('addplayer'),
+            data = dict(name = "Feng Lei",
+                charClass = "Ranger",
+                level = 3,
+                hp = 30,
+                ac = 17,
+                caster = True,
+                partyID = 1
+            )
+        )
+        
+        assert Player.query.filter_by(name="Feng Lei").id == 2
+
+class TestAddParty(TestBase):
+    def test_add_Party(self):
+        response = self.client.post(
+            url_for('addparty'),
+            data = dict(name = "Crucible")
+        )
+        
+        assert Player.query.filter_by(name="Crucible").id == 2
+
+class TestUpdatePlayer(TestBase):
+    def test_update_player(self):
+
+        assert
+
+class TestUpdateParty(TestBase):
+    def test_update_party(self):
+
+        assert
+
+
+class TestDeletePlayer(TestBase):
+    def test_delete_player(self):
+        response = self.client.delete(
+            url_for('deleteplayer'),
+            data = dict(name = "Shen Shuhan")
+        )
+        assert len(Player.query.all()) == 0
+
+        
+class TestDeleteParty(TestBase):
+    def test_delete_party(self):
+        response = self.client.delete(
+            url_for('deleteparty'),
+            data = dict(name = "Dynasty")
+        )
+        assert len(Party.query.all()) == 0
