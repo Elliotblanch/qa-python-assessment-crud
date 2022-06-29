@@ -103,12 +103,11 @@ class TestUpdateParty(TestBase):
     def test_update_party(self):
         response = self.client.post(
             'updateparty/1',
-            data = dict(name = 'Test2'
+            data = dict(name = "test1"
         ),
         follow_redirects = True
         )
-        self.assertIn(b'Test2', response.data)
-
+        self.assertIn(b'test1', response.data)
 
 
 class TestDeletePlayer(TestBase):
