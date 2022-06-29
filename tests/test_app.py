@@ -83,21 +83,46 @@ class TestAddParty(TestBase):
         
         assert Party.query.filter_by(name="Crucible").first().id == 2
 
+class TestUpdatePlayer(TestBase):
+    def test_update_player(self):
+        response = self.client.post(
+            'updateplayer/1',
+            data = dict(name = "ShenShuhan",
+            charClass = "Fighter",
+            level = 6,
+            hp = 63,
+            ac = 16,
+            caster = True,
+            partyID = 1
+        ),
+        follow_redirects = True
+        )
+        self.assertIn(b'ShenShuhan', response.data)
+
+class TestUpdateParty(TestBase):
+    def test_update_party(self):
+        response = self.client.post(
+            'updateparty/1',
+            data = dict(name = 'Test2'
+        ),
+        follow_redirects = True
+        )
+        self.assertIn(b'Test2', response.data)
+
 
 
 class TestDeletePlayer(TestBase):
     def test_delete_player(self):
-        response = self.client.delete(
-            url_for('deleteplayer'),
-            data = dict(name = "Shen Shuhan")
+        response = self.client.get(
+            url_for('deleteplayer', id = 1)
         )
         assert len(Player.query.all()) == 0
 
         
 class TestDeleteParty(TestBase):
     def test_delete_party(self):
-        response = self.client.delete(
-            url_for('deleteparty'),
-            data = dict(name = "Dynasty")
+        response = self.client.get(
+            url_for('deleteparty', id = 1)
+
         )
         assert len(Party.query.all()) == 0
