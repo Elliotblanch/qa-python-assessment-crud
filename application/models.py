@@ -8,9 +8,10 @@ class Player(db.Model):
     hp = db.Column(db.Integer)
     ac = db.Column(db.Integer)
     caster = db.Column(db.Boolean, default=False)
-    partyID = db.Column(db.Integer, foreign_key=True)
+    partyID = db.Column(db.Integer, db.ForeignKey("party.id"))
 
 
 class Party(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30))
+    player = db.relationship("Player", backref = "playerbr")

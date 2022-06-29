@@ -1,5 +1,6 @@
 flask
 flask_sqlalchemy
+flask_testing
 pymysql
 flask-wtf
 wtforms
