@@ -40,3 +40,21 @@ class TestViews(TestBase):
     def test_home_get(self):
         response = self.client.get(url_for('index'))
         self.assertEqual(response.status_code, 200)
+
+    def test_party_index_get(self):
+        response = self.client.get(url_for('partyindex'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_about_get(self):
+        response = self.client.get(url_for('about'))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_add_player_get(self):
+        response = self.client.get(url_for('addplayer'))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_add_party_get(self):
+        response = self.client.get(url_for('addparty'))
+        self.assertEqual(response.status_code, 200)
+
+
