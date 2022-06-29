@@ -4,6 +4,8 @@
 <br>
 {% for player in players %}
 <p>Character: {{ player.name }}</p>
+<p>Class: {{ player.charClass }}</p>
+<p>Level: {{ player.level }}</p>
 <form action="{{ url_for('deleteplayer', id=player.id) }}">
 <button type ="Submit">Delete character</button>
 </form>
