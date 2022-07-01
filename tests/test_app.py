@@ -57,6 +57,23 @@ class TestViews(TestBase):
         response = self.client.get(url_for('addparty'))
         self.assertEqual(response.status_code, 200)
 
+    def test_update_player_get(self):
+        response = self.client.get(url_for('updateplayer', id=1))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_update_party_get(self):
+        response = self.client.get(url_for('updateparty', id=1))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_delete_player_get(self):
+        response = self.client.get(url_for('deleteplayer', id=1))
+        self.assertEqual(response.status_code, 302)
+    
+    def test_delete_party_get(self):
+        response = self.client.get(url_for('deleteparty', id=1))
+        self.assertEqual(response.status_code, 302)
+
+
 
 class TestAddPlayer(TestBase):
     def test_add_Player(self):
