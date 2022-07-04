@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1>Navigation</h1>
+        <a href="{{ url_for('index') }}">Characters</a>
+        <a href="{{ url_for('partyindex') }}">Parties</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('addplayer') }}">Add character</a>
+        <a href="{{ url_for('addparty') }}">Add party</a>
+        {% block body %}
+        {% endblock body %}
+    </body>
+</html>
